@@ -1,0 +1,36 @@
+== Synopsis
+  This is the Ruby reference implementation for the Firebind Firescan
+  path scanner client.
+
+== Examples
+  This invocation performs a path scan on TCP ports 1-100 on target 192.168.100.1
+    firescan -s 192.168.100.1 -t 1-100
+
+  Other examples:
+    firescan -s 192.168.1.100 -u 1-100
+    firescan -n bob -p password123 -s 192.168.1.100 -u 1-100 -v
+
+== Usage
+   firescan -cs <server_address> -ps <port_list> -t <timeout> [-tcp|-udp|-img|-protocol <protocol_name>]
+
+  For help use: firescan -h  or  firescan --help
+
+== Options
+  -h, --help            Displays help message and version
+  -v, --verbose         Verbose output
+  -s, --command-server  Address:port or hostname:port of command server, default port is 80
+  -i, --timeout         Timeout to use for connect, transmit and receive operations
+  -t, --tcp             TCP port specification (list), use commas and dashes to specify a list of ports
+  -u, --udp             UDP port specification (list), use commas and dashes to specify a list of ports
+  -n, --username        Specify a username
+  -p, --password        Specify a password
+  -l, --local-address   Local IP address to use for establishing client socket
+  -g, --tag             Text or note associated with scan (label, location, etc)
+  -r, --protocol        Protocol to use for scan
+
+== Author
+  Jay Houghton (jay@firebind.com)
+
+== Copyright
+  Copyright (c) 2013 Firebind Inc. Licensed under the Apache 2.0 License:
+  http://www.apache.org/licenses/LICENSE-2.0.html
