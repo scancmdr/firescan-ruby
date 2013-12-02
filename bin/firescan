@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'firebind/client'
+client = Firebind::Client.new(ARGV)
+client.run
