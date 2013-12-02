@@ -1,3 +1,5 @@
+Firescan - path scan client
+
 == Synopsis
   This is the Ruby reference implementation for the Firebind Firescan
   path scanner client.
@@ -11,22 +13,27 @@
     firescan -n bob -p password123 -s 192.168.1.100 -u 1-100 -v
 
 == Usage
-   firescan -cs <server_address> -ps <port_list> -t <timeout> [-tcp|-udp|-img|-protocol <protocol_name>]
+   firescan [options]
 
   For help use: firescan -h  or  firescan --help
 
 == Options
-  -h, --help            Displays help message and version
-  -v, --verbose         Verbose output
-  -s, --command-server  Address:port or hostname:port of command server, default port is 80
-  -i, --timeout         Timeout to use for connect, transmit and receive operations
-  -t, --tcp             TCP port specification (list), use commas and dashes to specify a list of ports
-  -u, --udp             UDP port specification (list), use commas and dashes to specify a list of ports
-  -n, --username        Specify a username
-  -p, --password        Specify a password
-  -l, --local-address   Local IP address to use for establishing client socket
-  -g, --tag             Text or note associated with scan (label, location, etc)
-  -r, --protocol        Protocol to use for scan
+  Note that when invoked without a command server address, the client will default to the public service
+  located at scanme.firebind.com
+
+    -h, --help                       Show help and version
+    -v, --verbose                    Show verbose output
+    -s, --command-server ADDRESS     Address:port or hostname:port of command server, default port is 80
+    -t, --tcp PORT_LIST              TCP Port specification (list), use commas and dashes to specify a list of ports
+    -u, --udp PORT_LIST              UDP Port specification (list), use commas and dashes to specify a list of ports
+    -i, --timeout TIMEOUT            Timeout (in milliseconds) to use for connect, transmit and receive operations
+    -n, --username USERNAME          Specify a username (to connect to command server)
+    -p, --password PASSWORD          Specify a password (to connect to command server)
+    -r, --protocol PROTOCOL          Specify a protocol
+    -g, --tag TAG                    tag the scan with value
+    -l, --localaddr LOCAL_ADDRESS    Specify local IP address for client binding
+    -d, --xdebug                     Show debug output
+
 
 == Author
   Jay Houghton (jay@firebind.com)

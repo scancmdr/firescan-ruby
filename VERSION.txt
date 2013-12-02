@@ -1,4 +1,4 @@
 Firescan Versioning
 -------------------
 
-
+Version 0.07 - 12/2/2013 - Inital release
