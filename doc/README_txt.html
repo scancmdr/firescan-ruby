@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>VERSION - RDoc Documentation</title>
+<title>README - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -44,6 +44,16 @@
 
 
   
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-"></a>
+      <li><a href="#label-"></a>
+    </ul>
+  </nav>
+</div>
+
 
   <div id="project-metadata">
     <nav id="fileindex-section" class="section project-section">
@@ -109,10 +119,45 @@
 
 <div id="documentation" class="description">
   
-<p>Firescan Versioning</p>
-<hr style="height: 10px">
+<p>firescan-ruby</p>
 
-<p>Version 0.07 - 12/2/2013 - Inital release</p>
+<h6 id="label-"><span><a href="#label-">&para;</a> <a href="#documentation">&uarr;</a></span></h6>
+
+<p>Ruby reference implementation for the <a href="Firebind.html">Firebind</a>
+Firescan path scan client This code has been tested to work with Ruby 1.9.3
+and <a href="Firebind.html">Firebind</a> Reflector 1.0.</p>
+
+<p>Integration</p>
+
+<h6 id="label-"><span><a href="#label-">&para;</a> <a href="#documentation">&uarr;</a></span></h6>
+
+<p>Integrating the Firescan library is straight forward. It uses a single
+object ‘Scan’ and a simple callback mechanism using Ruby’s built-in
+Observer feature. Create a Scan object, pass it your handler (something
+that implements the Observer update method) and run the Scan. A handler
+update method might look like this:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">state</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">current_state</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-constant">PORT_COMPLETE</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Port #{state.port} #{state.description(state.port_result_code)}&quot;</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-constant">PORT_START</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-constant">PORT_TICK</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-constant">SCAN_START</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-constant">START_FAILURE</span>
+    <span class="ruby-keyword">when</span> :<span class="ruby-constant">SCAN_COMPLETE</span>
+    <span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Then create and run a Scan object like this:</p>
+
+<pre>scan = Firebind::Scan.new('scanme.firebind.com','1-10',:UDP)
+scan.add_observer myHandler
+state = scan.scan</pre>
+
+<p>See the lib/example.rb script for a simple working example.</p>
 
 </div>
 

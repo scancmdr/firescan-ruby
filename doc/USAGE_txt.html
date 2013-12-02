@@ -67,11 +67,17 @@
   
     <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
   
+    <li class="file"><a href="./README_txt.html">README</a>
+  
     <li class="file"><a href="./USAGE_txt.html">USAGE</a>
   
     <li class="file"><a href="./VERSION_txt.html">VERSION</a>
   
+    <li class="file"><a href="./build.html">build</a>
+  
     <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./firescan_gemspec.html">firescan.gemspec</a>
   
   </ul>
 </nav>
@@ -103,6 +109,10 @@
   
     <li><a href="./Firebind/UdpTransport.html">Firebind::UdpTransport</a>
   
+    <li><a href="./Runner.html">Runner</a>
+  
+    <li><a href="./TestPortspec.html">TestPortspec</a>
+  
     <li><a href="./Tools.html">Tools</a>
   
   </ul>
@@ -113,6 +123,8 @@
 
 <div id="documentation" class="description">
   
+<p>Firescan - path scan client</p>
+
 <h2 id="label-Synopsis">Synopsis<span><a href="#label-Synopsis">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
 <pre>This is the Ruby reference implementation for the Firebind Firescan
@@ -129,23 +141,27 @@ Other examples:
 
 <h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<pre> firescan -cs &lt;server_address&gt; -ps &lt;port_list&gt; -t &lt;timeout&gt; [-tcp|-udp|-img|-protocol &lt;protocol_name&gt;]
+<pre> firescan [options]
 
 For help use: firescan -h  or  firescan --help</pre>
 
 <h2 id="label-Options">Options<span><a href="#label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 
-<pre>-h, --help            Displays help message and version
--v, --verbose         Verbose output
--s, --command-server  Address:port or hostname:port of command server, default port is 80
--i, --timeout         Timeout to use for connect, transmit and receive operations
--t, --tcp             TCP port specification (list), use commas and dashes to specify a list of ports
--u, --udp             UDP port specification (list), use commas and dashes to specify a list of ports
--n, --username        Specify a username
--p, --password        Specify a password
--l, --local-address   Local IP address to use for establishing client socket
--g, --tag             Text or note associated with scan (label, location, etc)
--r, --protocol        Protocol to use for scan</pre>
+<pre>Note that when invoked without a command server address, the client will default to the public service
+located at scanme.firebind.com
+
+  -h, --help                       Show help and version
+  -v, --verbose                    Show verbose output
+  -s, --command-server ADDRESS     Address:port or hostname:port of command server, default port is 80
+  -t, --tcp PORT_LIST              TCP Port specification (list), use commas and dashes to specify a list of ports
+  -u, --udp PORT_LIST              UDP Port specification (list), use commas and dashes to specify a list of ports
+  -i, --timeout TIMEOUT            Timeout (in milliseconds) to use for connect, transmit and receive operations
+  -n, --username USERNAME          Specify a username (to connect to command server)
+  -p, --password PASSWORD          Specify a password (to connect to command server)
+  -r, --protocol PROTOCOL          Specify a protocol
+  -g, --tag TAG                    tag the scan with value
+  -l, --localaddr LOCAL_ADDRESS    Specify local IP address for client binding
+  -d, --xdebug                     Show debug output</pre>
 
 <h2 id="label-Author">Author<span><a href="#label-Author">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
 

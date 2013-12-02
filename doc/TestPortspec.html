@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>module Tools - RDoc Documentation</title>
+<title>class TestPortspec - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body id="top" class="module">
+<body id="top" class="class">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -49,7 +49,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/firebind/tools.rb
+    <li>test/portspec_test.rb
   </ul>
 </nav>
 
@@ -58,7 +58,13 @@
 
   <div id="class-metadata">
     
-    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Test::Unit::TestCase
+  
+</nav>
+
     
     
     <!-- Method Quickref -->
@@ -67,13 +73,11 @@
 
   <ul class="link-list">
     
-    <li ><a href="#method-i-big_endian">#big_endian</a>
+    <li ><a href="#method-i-setup">#setup</a>
     
-    <li ><a href="#method-i-debug">#debug</a>
+    <li ><a href="#method-i-teardown">#teardown</a>
     
-    <li ><a href="#method-i-out">#out</a>
-    
-    <li ><a href="#method-i-verbose">#verbose</a>
+    <li ><a href="#method-i-test_fail">#test_fail</a>
     
   </ul>
 </nav>
@@ -143,12 +147,10 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="module">module Tools</h1>
+  <h1 class="class">class TestPortspec</h1>
 
   <div id="description" class="description">
     
-<p>Utility module for translating socket and result codes.</p>
-
   </div><!-- description -->
 
   
@@ -169,11 +171,11 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="method-i-big_endian" class="method-detail ">
+      <div id="method-i-setup" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">big_endian</span><span
-            class="method-args">(a_number)</span>
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -182,36 +184,32 @@
 
         <div class="method-description">
           
-          
+          <p>Called before every test method runs. Can be used to set up fixture
+information.</p>
           
           
 
           
-          <div class="method-source-code" id="big_endian-source">
-            <pre><span class="ruby-comment"># File lib/firebind/tools.rb, line 23</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">big_endian</span>(<span class="ruby-identifier">a_number</span>)
-  <span class="ruby-identifier">bytes</span> = []
-  <span class="ruby-value">7</span>.<span class="ruby-identifier">downto</span>(<span class="ruby-value">0</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-value">0xFF</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">a_number</span>
-    <span class="ruby-identifier">a_number</span> = <span class="ruby-identifier">a_number</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">8</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">bytes</span>
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File test/portspec_test.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup</span>
+  <span class="ruby-comment"># Do nothing</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- big_endian-source -->
+          </div><!-- setup-source -->
           
         </div>
 
         
 
         
-      </div><!-- big_endian-method -->
+      </div><!-- setup-method -->
 
     
-      <div id="method-i-debug" class="method-detail ">
+      <div id="method-i-teardown" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">debug</span><span
-            class="method-args">(msg)</span>
+          <span class="method-name">teardown</span><span
+            class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -220,31 +218,32 @@
 
         <div class="method-description">
           
-          
+          <p>Called after every test method runs. Can be used to tear down fixture
+information.</p>
           
           
 
           
-          <div class="method-source-code" id="debug-source">
-            <pre><span class="ruby-comment"># File lib/firebind/tools.rb, line 99</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">debug</span>(<span class="ruby-identifier">msg</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;DEBUG #{self.class.to_s} - #{msg}&quot;</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$debug</span>
+          <div class="method-source-code" id="teardown-source">
+            <pre><span class="ruby-comment"># File test/portspec_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">teardown</span>
+  <span class="ruby-comment"># Do nothing</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- debug-source -->
+          </div><!-- teardown-source -->
           
         </div>
 
         
 
         
-      </div><!-- debug-method -->
+      </div><!-- teardown-method -->
 
     
-      <div id="method-i-out" class="method-detail ">
+      <div id="method-i-test_fail" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">out</span><span
-            class="method-args">(msg)</span>
+          <span class="method-name">test_fail</span><span
+            class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -253,57 +252,26 @@
 
         <div class="method-description">
           
-          
+          <p>Fake test</p>
           
           
 
           
-          <div class="method-source-code" id="out-source">
-            <pre><span class="ruby-comment"># File lib/firebind/tools.rb, line 103</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">out</span>(<span class="ruby-identifier">msg</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+          <div class="method-source-code" id="test_fail-source">
+            <pre><span class="ruby-comment"># File test/portspec_test.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_fail</span>
+
+
+  <span class="ruby-comment">#fail('Not implemented')</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- out-source -->
+          </div><!-- test_fail-source -->
           
         </div>
 
         
 
         
-      </div><!-- out-method -->
-
-    
-      <div id="method-i-verbose" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">verbose</span><span
-            class="method-args">(msg)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="verbose-source">
-            <pre><span class="ruby-comment"># File lib/firebind/tools.rb, line 95</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">verbose</span>(<span class="ruby-identifier">msg</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Firescan - #{msg}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$verbose</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- verbose-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- verbose-method -->
+      </div><!-- test_fail-method -->
 
     
     </section><!-- public-instance-method-details -->

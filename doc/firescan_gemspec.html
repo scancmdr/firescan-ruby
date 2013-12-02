@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>VERSION - RDoc Documentation</title>
+<title>firescan.gemspec - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -109,10 +109,24 @@
 
 <div id="documentation" class="description">
   
-<p>Firescan Versioning</p>
-<hr style="height: 10px">
+<p>Gem::Specification.new do |s|</p>
 
-<p>Version 0.07 - 12/2/2013 - Inital release</p>
+<pre>s.name = 'firescan'
+s.summary = 'Perform network path scanning'
+s.description = File.read(File.join(File.dirname(__FILE__), 'README.txt'))
+s.requirements = 'none'
+s.version = '0.07'
+s.author = 'Jay Houghton'
+s.email = 'jay@firebind.com'
+s.homepage = 'http://www.firebind.com'
+s.platform = Gem::Platform::RUBY
+s.required_ruby_version = '&gt;=1.9'
+s.files = Dir['**/**']
+s.executables = ['firescan']
+s.test_files = Dir['test/test*.rb']
+s.has_rdoc = false</pre>
+
+<p>end</p>
 
 </div>
 
