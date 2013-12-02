@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Firebind::Client - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/firebind/client.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../Tools.html">Tools</a>
+  
+  
+  </ul>
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-arguments_valid-3F">#arguments_valid?</a>
+    
+    <li ><a href="#method-i-do_output">#do_output</a>
+    
+    <li ><a href="#method-i-do_scan_output">#do_scan_output</a>
+    
+    <li ><a href="#method-i-output_options">#output_options</a>
+    
+    <li ><a href="#method-i-parsed_options-3F">#parsed_options?</a>
+    
+    <li ><a href="#method-i-run">#run</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../USAGE_txt.html">USAGE</a>
+  
+    <li class="file"><a href="../VERSION_txt.html">VERSION</a>
+  
+    <li class="file"><a href="../doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Example.html">Example</a>
+  
+    <li><a href="../Firebind.html">Firebind</a>
+  
+    <li><a href="../Firebind/Client.html">Firebind::Client</a>
+  
+    <li><a href="../Firebind/Portspec.html">Firebind::Portspec</a>
+  
+    <li><a href="../Firebind/Scan.html">Firebind::Scan</a>
+  
+    <li><a href="../Firebind/ScanError.html">Firebind::ScanError</a>
+  
+    <li><a href="../Firebind/ScanState.html">Firebind::ScanState</a>
+  
+    <li><a href="../Firebind/SimpleProtocol.html">Firebind::SimpleProtocol</a>
+  
+    <li><a href="../Firebind/TcpTransport.html">Firebind::TcpTransport</a>
+  
+    <li><a href="../Firebind/Transport.html">Firebind::Transport</a>
+  
+    <li><a href="../Firebind/UdpTransport.html">Firebind::UdpTransport</a>
+  
+    <li><a href="../Tools.html">Tools</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Firebind::Client</h1>
+
+  <div id="description" class="description">
+    
+<p>Firescan command line Ruby client for path scanning to a <a
+href="../Firebind.html">Firebind</a> server</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(arguments)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">arguments</span>)
+  <span class="ruby-ivar">@arguments</span> = <span class="ruby-identifier">arguments</span>
+
+  <span class="ruby-ivar">@opts</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-comment"># Set defaults</span>
+  <span class="ruby-ivar">@options</span> = <span class="ruby-constant">OpenStruct</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">command_server</span> = <span class="ruby-string">'scanme.firebind.com'</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">protocol</span> = <span class="ruby-value">:Simple</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">transport</span> = <span class="ruby-value">:TCP</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">timeout</span> = <span class="ruby-value">5000</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">local_address</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tag</span> = <span class="ruby-constant">NIL</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-do_output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">do_output</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="do_output-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">do_output</span>
+
+  <span class="ruby-identifier">tcp</span> = <span class="ruby-ivar">@tcp_scan</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@tcp_scan</span>.<span class="ruby-identifier">current_state</span> <span class="ruby-operator">==</span> <span class="ruby-value">:SCAN_COMPLETE</span>
+  <span class="ruby-identifier">udp</span> = <span class="ruby-ivar">@udp_scan</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@udp_scan</span>.<span class="ruby-identifier">current_state</span> <span class="ruby-operator">==</span> <span class="ruby-value">:SCAN_COMPLETE</span>
+
+  <span class="ruby-comment"># we had a complete scan, show summary</span>
+
+  <span class="ruby-identifier">out</span> = <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tcp</span>
+    <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Completed #{@tcp_scan.protocol} scan of #{@tcp_scan.transport} #{@tcp_scan.portspec.to_s}\n&quot;</span>
+    <span class="ruby-identifier">tcp_transport_out</span>,<span class="ruby-identifier">tcp_scanned_out</span>,<span class="ruby-identifier">tcp_port_detail_out</span> = <span class="ruby-identifier">do_scan_output</span>(<span class="ruby-ivar">@tcp_scan</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">udp</span>
+    <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Completed #{@udp_scan.protocol} scan of #{@udp_scan.transport} #{@udp_scan.portspec.to_s}\n&quot;</span>
+    <span class="ruby-identifier">udp_transport_out</span>,<span class="ruby-identifier">udp_scanned_out</span>,<span class="ruby-identifier">udp_port_detail_out</span> = <span class="ruby-identifier">do_scan_output</span>(<span class="ruby-ivar">@udp_scan</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tcp_transport_out</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tcp_transport_out</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">udp_transport_out</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">udp_transport_out</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tcp_scanned_out</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tcp_scanned_out</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">udp_scanned_out</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">udp_scanned_out</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">tcp_port_detail_out</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tcp_port_detail_out</span>
+  <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">udp_port_detail_out</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">udp_port_detail_out</span>
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">out</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- do_output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- do_output-method -->
+
+    
+      <div id="method-i-do_scan_output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">do_scan_output</span><span
+            class="method-args">(state)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>command line output formatting helpers</p>
+          
+          
+
+          
+          <div class="method-source-code" id="do_scan_output-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">do_scan_output</span>(<span class="ruby-identifier">state</span>)
+  <span class="ruby-identifier">open_ports</span> = <span class="ruby-identifier">state</span>.<span class="ruby-identifier">open_ports</span>
+  <span class="ruby-identifier">closed_ports</span> = <span class="ruby-identifier">state</span>.<span class="ruby-identifier">closed_ports</span>
+
+  <span class="ruby-identifier">open_defa</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">open_ports</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span> <span class="ruby-keyword">then</span> <span class="ruby-string">'are'</span> <span class="ruby-keyword">else</span> <span class="ruby-string">'is'</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">closed_defa</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">closed_ports</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span> <span class="ruby-keyword">then</span> <span class="ruby-string">'are'</span> <span class="ruby-keyword">else</span> <span class="ruby-string">'is'</span> <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">port_or_ports</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">ports_scanned</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword">then</span> <span class="ruby-string">'port'</span> <span class="ruby-keyword">else</span> <span class="ruby-string">'ports'</span> <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">transport_output</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">transport_output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{state.transport} Port#{'s' unless open_ports.size == 1} #{open_ports.to_s} &quot;</span>              <span class="ruby-node">&quot;#{open_defa} open\n&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">open_ports</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">transport_output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{state.transport} Port#{'s' unless closed_ports.size == 1} #{closed_ports.to_s} &quot;</span>              <span class="ruby-node">&quot;#{closed_defa} closed\n&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">closed_ports</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">scanned_output</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">scanned_output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\nScanned #{state.ports_scanned} #{state.transport} #{port_or_ports}&quot;</span>
+  <span class="ruby-identifier">scanned_output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;, #{open_ports.size} #{open_defa} open&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">open_ports</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">scanned_output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;, #{closed_ports.size} #{closed_defa} closed&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">closed_ports</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">port_detail_output</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">state</span>.<span class="ruby-identifier">result_map</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span>,<span class="ruby-identifier">ports</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$success</span>
+      <span class="ruby-identifier">ps</span> = <span class="ruby-constant">Portspec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ports</span>)
+      <span class="ruby-identifier">port_detail_output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{port_or_ports.capitalize} #{ps.to_s} #{if ps.size&gt;1 then 'are' else 'is' end} closed - #{$result_code_messages[code]}\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">transport_output</span>,<span class="ruby-identifier">scanned_output</span>,<span class="ruby-identifier">port_detail_output</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- do_scan_output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- do_scan_output-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parse options, check arguments, then process the command</p>
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+  <span class="ruby-identifier">scan</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-keyword">begin</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">parsed_options?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arguments_valid?</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+      <span class="ruby-identifier">verbose</span> <span class="ruby-node">&quot;Start at #{DateTime.now}&quot;</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Firescan Ruby client version #{VERSION} ( http://www.firebind.com )&quot;</span>
+      <span class="ruby-comment">#############</span>
+      <span class="ruby-comment"># TCP scan</span>
+      <span class="ruby-comment">#############</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span>.<span class="ruby-identifier">nil?</span>
+
+        <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;performing scan on TCP #{@options.tcp_port_list} via #{@options.command_server}&quot;</span>
+
+        <span class="ruby-identifier">scan</span> = <span class="ruby-constant">Scan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@options</span>.<span class="ruby-identifier">command_server</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span>,
+                        <span class="ruby-value">:TCP</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">timeout</span>,
+                        <span class="ruby-value">:SimpleProtocol</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span>)
+
+        <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">add_observer</span> <span class="ruby-keyword">self</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-ivar">@tcp_scan</span> = <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">scan</span>
+
+          <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;scan state: #{@tcp_scan.to_s}&quot;</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EHOSTUNREACH</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-string">'host not reachable'</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment">#############</span>
+      <span class="ruby-comment"># UDP scan</span>
+      <span class="ruby-comment">#############</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span>.<span class="ruby-identifier">nil?</span>
+
+        <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;performing scan on UDP #{@options.udp_port_list} via #{@options.command_server}&quot;</span>
+
+        <span class="ruby-identifier">scan</span> = <span class="ruby-constant">Scan</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@options</span>.<span class="ruby-identifier">command_server</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span>,
+                        <span class="ruby-value">:UDP</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">timeout</span>,
+                        <span class="ruby-value">:SimpleProtocol</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span>)
+
+        <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">add_observer</span> <span class="ruby-keyword">self</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-ivar">@udp_scan</span> = <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">scan</span>
+
+          <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;scan state: #{@udp_scan.to_s}&quot;</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EHOSTUNREACH</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-string">'host not reachable'</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">do_output</span>
+      <span class="ruby-identifier">verbose</span> <span class="ruby-node">&quot;Finished at #{DateTime.now}&quot;</span>
+
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@opts</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">'Stopping scan'</span>
+    <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">stop</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(state)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>scan callback interface @param [Object] state</p>
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">state</span>)
+  <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;callback #{state.to_s}&quot;</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">current_state</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:PORT_COMPLETE</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">port_result_code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$success</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot; open in #{state.port_duration}ms #{state.percent_complete}%&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot; closed after #{state.port_duration}ms - #{$result_code_messages[state.port_result_code]}&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:PORT_START</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;#{state.transport.to_s} #{state.port.to_s}&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:PORT_TICK</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-string">'.'</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:SCAN_START</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Performing #{state.protocol} scan on #{state.transport} ports #{state.portspec.to_s} via #{state.command_server} with #{state.timeout}ms timeout&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:START_FAILURE</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">status_code</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-identifier">$authentication_failure</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-string">'Authentication failure'</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-identifier">$request_invalid</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-string">'Incompatible command server (request invalid)'</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-identifier">$server_bind_error</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Server unable to bind on ports #{state.portspec.to_s}&quot;</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-identifier">$command_server_unavailable</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Unable to reach command server #{state.message}&quot;</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Unable to start scan (code #{state.status_code})&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:SCAN_COMPLETE</span>
+
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;unhandled callback #{state.to_s}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-arguments_valid-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">arguments_valid?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>True if required arguments were provided</p>
+          
+          
+
+          
+          <div class="method-source-code" id="arguments_valid-3F-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 302</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">arguments_valid?</span>
+  <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">NIL</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">NIL</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- arguments_valid-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- arguments_valid-3F-method -->
+
+    
+      <div id="method-i-output_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output_options</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="output_options-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">output_options</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Options:\           &quot;</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">marshal_dump</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  #{name} = #{val}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- output_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- output_options-method -->
+
+    
+      <div id="method-i-parsed_options-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parsed_options?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>figure what arguments we have to work with</p>
+          
+          
+
+          
+          <div class="method-source-code" id="parsed_options-3F-source">
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parsed_options?</span>
+
+  <span class="ruby-ivar">@opts</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-node">&quot;\nFirescan Ruby client version #{VERSION} ( http://www.firebind.com )\nUsage: firescan [options] &quot;</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">''</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">'Options'</span>
+
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-h'</span>, <span class="ruby-string">'--help'</span>,<span class="ruby-string">'Show help and version'</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-ivar">@opts</span>
+      <span class="ruby-identifier">exit</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-v'</span>, <span class="ruby-string">'--verbose'</span>,<span class="ruby-string">'Show verbose output'</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">$verbose</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-s ADDRESS'</span>, <span class="ruby-string">'--command-server ADDRESS'</span>,<span class="ruby-string">'Address:port or hostname:port of command server, default port is 80'</span>,<span class="ruby-constant">String</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">address</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">command_server</span> = <span class="ruby-identifier">address</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-t PORT_LIST'</span>, <span class="ruby-string">'--tcp PORT_LIST'</span>,<span class="ruby-string">'TCP Port specification (list), use commas and dashes to specify a list of ports'</span>,<span class="ruby-constant">String</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tcp_port_list</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span> = <span class="ruby-identifier">tcp_port_list</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-u PORT_LIST'</span>, <span class="ruby-string">'--udp PORT_LIST'</span>,<span class="ruby-string">'UDP Port specification (list), use commas and dashes to specify a list of ports'</span>,<span class="ruby-constant">String</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">udp_port_list</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span> = <span class="ruby-identifier">udp_port_list</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-i TIMEOUT'</span>, <span class="ruby-string">'--timeout TIMEOUT'</span>,<span class="ruby-string">'Timeout (in milliseconds) to use for connect, transmit and receive operations'</span>,<span class="ruby-constant">Integer</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">timeout</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">timeout</span> = <span class="ruby-identifier">timeout</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-n USERNAME'</span>, <span class="ruby-string">'--username USERNAME'</span>,<span class="ruby-string">'Specify a username (to connect to command server)'</span>,<span class="ruby-constant">String</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">username</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span> = <span class="ruby-identifier">username</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-p PASSWORD'</span>, <span class="ruby-string">'--password PASSWORD'</span>,<span class="ruby-string">'Specify a password (to connect to command server)'</span>,<span class="ruby-constant">String</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">password</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span> = <span class="ruby-identifier">password</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment">#opt.on('-r PROTOCOL', '--protocol PROTOCOL','Specify a protocol (defaults to Simple protocol)',String) do |protocol|</span>
+      <span class="ruby-comment">#@options.protocol = protocol</span>
+      <span class="ruby-comment"># todo handle this when IMG is available</span>
+    <span class="ruby-comment">#end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-g TAG'</span>, <span class="ruby-string">'--tag TAG'</span>,<span class="ruby-string">'tag the scan with value'</span>,<span class="ruby-constant">String</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tag</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tag</span> = <span class="ruby-identifier">tag</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment">#opt.on('-l LOCAL_ADDRESS', '--localaddr LOCAL_ADDRESS','Specify local IP address for client binding',String) do |addr|</span>
+    <span class="ruby-comment">#  @options.local_address = addr</span>
+    <span class="ruby-comment">#end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-d'</span>, <span class="ruby-string">'--xdebug'</span>,<span class="ruby-string">'Show debug output'</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">$verbose</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">$debug</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">''</span>
+ <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@opts</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-ivar">@arguments</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">verbose</span> <span class="ruby-string">'verbose output is on'</span>
+  <span class="ruby-identifier">debug</span> <span class="ruby-string">'debug output is on'</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$debug</span>
+    <span class="ruby-identifier">output_options</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment">#debug @options.to_s</span>
+
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parsed_options-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parsed_options-3F-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

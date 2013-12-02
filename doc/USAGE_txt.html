@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>USAGE - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+<div id="table-of-contents">
+  <nav class="section">
+    <h3 class="section-header">Table of Contents</h3>
+    <ul>
+      <li><a href="#label-Synopsis">Synopsis</a>
+      <li><a href="#label-Examples">Examples</a>
+      <li><a href="#label-Usage">Usage</a>
+      <li><a href="#label-Options">Options</a>
+      <li><a href="#label-Author">Author</a>
+      <li><a href="#label-Copyright">Copyright</a>
+    </ul>
+  </nav>
+</div>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./USAGE_txt.html">USAGE</a>
+  
+    <li class="file"><a href="./VERSION_txt.html">VERSION</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Example.html">Example</a>
+  
+    <li><a href="./Firebind.html">Firebind</a>
+  
+    <li><a href="./Firebind/Client.html">Firebind::Client</a>
+  
+    <li><a href="./Firebind/Portspec.html">Firebind::Portspec</a>
+  
+    <li><a href="./Firebind/Scan.html">Firebind::Scan</a>
+  
+    <li><a href="./Firebind/ScanError.html">Firebind::ScanError</a>
+  
+    <li><a href="./Firebind/ScanState.html">Firebind::ScanState</a>
+  
+    <li><a href="./Firebind/SimpleProtocol.html">Firebind::SimpleProtocol</a>
+  
+    <li><a href="./Firebind/TcpTransport.html">Firebind::TcpTransport</a>
+  
+    <li><a href="./Firebind/Transport.html">Firebind::Transport</a>
+  
+    <li><a href="./Firebind/UdpTransport.html">Firebind::UdpTransport</a>
+  
+    <li><a href="./Tools.html">Tools</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h2 id="label-Synopsis">Synopsis<span><a href="#label-Synopsis">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>This is the Ruby reference implementation for the Firebind Firescan
+path scanner client.</pre>
+
+<h2 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>This invocation performs a path scan on TCP ports 1-100 on target 192.168.100.1
+  firescan -s 192.168.100.1 -t 1-100
+
+Other examples:
+  firescan -s 192.168.1.100 -u 1-100
+  firescan -n bob -p password123 -s 192.168.1.100 -u 1-100 -v</pre>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre> firescan -cs &lt;server_address&gt; -ps &lt;port_list&gt; -t &lt;timeout&gt; [-tcp|-udp|-img|-protocol &lt;protocol_name&gt;]
+
+For help use: firescan -h  or  firescan --help</pre>
+
+<h2 id="label-Options">Options<span><a href="#label-Options">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>-h, --help            Displays help message and version
+-v, --verbose         Verbose output
+-s, --command-server  Address:port or hostname:port of command server, default port is 80
+-i, --timeout         Timeout to use for connect, transmit and receive operations
+-t, --tcp             TCP port specification (list), use commas and dashes to specify a list of ports
+-u, --udp             UDP port specification (list), use commas and dashes to specify a list of ports
+-n, --username        Specify a username
+-p, --password        Specify a password
+-l, --local-address   Local IP address to use for establishing client socket
+-g, --tag             Text or note associated with scan (label, location, etc)
+-r, --protocol        Protocol to use for scan</pre>
+
+<h2 id="label-Author">Author<span><a href="#label-Author">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>Jay Houghton (jay@firebind.com)</pre>
+
+<h2 id="label-Copyright">Copyright<span><a href="#label-Copyright">&para;</a> <a href="#documentation">&uarr;</a></span></h2>
+
+<pre>Copyright (c) 2013 Firebind Inc. Licensed under the Apache 2.0 License:
+http://www.apache.org/licenses/LICENSE-2.0.html</pre>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

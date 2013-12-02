@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Firebind::ScanState - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/firebind/scan_state.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../Tools.html">Tools</a>
+  
+  
+  </ul>
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-closed_ports">#closed_ports</a>
+    
+    <li ><a href="#method-i-description">#description</a>
+    
+    <li ><a href="#method-i-on_error">#on_error</a>
+    
+    <li ><a href="#method-i-on_port_complete">#on_port_complete</a>
+    
+    <li ><a href="#method-i-on_port_start">#on_port_start</a>
+    
+    <li ><a href="#method-i-on_port_tick">#on_port_tick</a>
+    
+    <li ><a href="#method-i-on_scan_complete">#on_scan_complete</a>
+    
+    <li ><a href="#method-i-on_scan_start">#on_scan_start</a>
+    
+    <li ><a href="#method-i-on_scan_stop">#on_scan_stop</a>
+    
+    <li ><a href="#method-i-on_start_failure">#on_start_failure</a>
+    
+    <li ><a href="#method-i-open_ports">#open_ports</a>
+    
+    <li ><a href="#method-i-percent_complete">#percent_complete</a>
+    
+    <li ><a href="#method-i-port_delay_seconds">#port_delay_seconds</a>
+    
+    <li ><a href="#method-i-port_duration">#port_duration</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../USAGE_txt.html">USAGE</a>
+  
+    <li class="file"><a href="../VERSION_txt.html">VERSION</a>
+  
+    <li class="file"><a href="../doc/created_rid.html">created.rid</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Example.html">Example</a>
+  
+    <li><a href="../Firebind.html">Firebind</a>
+  
+    <li><a href="../Firebind/Client.html">Firebind::Client</a>
+  
+    <li><a href="../Firebind/Portspec.html">Firebind::Portspec</a>
+  
+    <li><a href="../Firebind/Scan.html">Firebind::Scan</a>
+  
+    <li><a href="../Firebind/ScanError.html">Firebind::ScanError</a>
+  
+    <li><a href="../Firebind/ScanState.html">Firebind::ScanState</a>
+  
+    <li><a href="../Firebind/SimpleProtocol.html">Firebind::SimpleProtocol</a>
+  
+    <li><a href="../Firebind/TcpTransport.html">Firebind::TcpTransport</a>
+  
+    <li><a href="../Firebind/Transport.html">Firebind::Transport</a>
+  
+    <li><a href="../Firebind/UdpTransport.html">Firebind::UdpTransport</a>
+  
+    <li><a href="../Tools.html">Tools</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Firebind::ScanState</h1>
+
+  <div id="description" class="description">
+    
+<pre>Scan lifecycle states
+ SCAN_SETUP
+ SCAN_START
+ PORT_START
+ PORT_TICK
+ PORT_COMPLETE
+  ...
+ SCAN_STOP or SCAN_COMPLETE  or START_FAILURE or ERROR</pre>
+
+<p>noinspection RubyTooManyInstanceVariablesInspection</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-command_server" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">command_server</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-current_state" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">current_state</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-echo_server" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">echo_server</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-guid" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">guid</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-last_duration" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">last_duration</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-message" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">message</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-port" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">port</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-port_delay" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">port_delay</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-port_result_code" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">port_result_code</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-ports_scanned" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ports_scanned</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-portspec" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">portspec</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-protocol" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">protocol</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-result_map" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">result_map</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-status_code" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status_code</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-timeout" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">timeout</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-transport" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">transport</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(command_server,protocol,transport,portspec,timeout)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param [Firebind::Portspec] portspec</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">command_server</span>,<span class="ruby-identifier">protocol</span>,<span class="ruby-identifier">transport</span>,<span class="ruby-identifier">portspec</span>,<span class="ruby-identifier">timeout</span>)
+  <span class="ruby-ivar">@command_server</span> = <span class="ruby-identifier">command_server</span>
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_SETUP</span>
+  <span class="ruby-ivar">@protocol</span> = <span class="ruby-identifier">protocol</span>
+  <span class="ruby-ivar">@transport</span> = <span class="ruby-identifier">transport</span>
+  <span class="ruby-ivar">@portspec</span> = <span class="ruby-identifier">portspec</span>
+  <span class="ruby-ivar">@timeout</span> = <span class="ruby-identifier">timeout</span>
+  <span class="ruby-ivar">@guid</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-ivar">@echo_server</span> = <span class="ruby-constant">NIL</span>
+  <span class="ruby-ivar">@port</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@last_duration</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@ports_scanned</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@result_map</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>]=[]}  <span class="ruby-comment"># block form</span>
+  <span class="ruby-ivar">@message</span> = <span class="ruby-constant">NIL</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-closed_ports" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">closed_ports</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>return a <a href="Portspec.html">Portspec</a> of the closed ports for this
+scan</p>
+          
+          
+
+          
+          <div class="method-source-code" id="closed_ports-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">closed_ports</span>
+  <span class="ruby-identifier">closed</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@result_map</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span>,<span class="ruby-identifier">ports</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">closed</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">ports</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$success</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Portspec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">closed</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- closed_ports-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- closed_ports-method -->
+
+    
+      <div id="method-i-description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description</span><span
+            class="method-args">(port_result_code)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="description-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">description</span>(<span class="ruby-identifier">port_result_code</span>)
+  <span class="ruby-identifier">$result_code_messages</span>[<span class="ruby-identifier">port_result_code</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- description-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- description-method -->
+
+    
+      <div id="method-i-on_error" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_error</span><span
+            class="method-args">(status_code)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_error-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_error</span>(<span class="ruby-identifier">status_code</span>)
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:ERROR</span>
+  <span class="ruby-ivar">@status_code</span> = <span class="ruby-identifier">status_code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_error-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_error-method -->
+
+    
+      <div id="method-i-on_port_complete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_port_complete</span><span
+            class="method-args">(port,port_result_code)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param [Object] port</p>
+          
+          
+
+          
+          <div class="method-source-code" id="on_port_complete-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_port_complete</span>(<span class="ruby-identifier">port</span>,<span class="ruby-identifier">port_result_code</span>)
+  <span class="ruby-ivar">@port_end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:PORT_COMPLETE</span>
+  <span class="ruby-ivar">@port</span> = <span class="ruby-identifier">port</span>
+  <span class="ruby-ivar">@port_result_code</span> =  <span class="ruby-identifier">port_result_code</span>
+  <span class="ruby-ivar">@ports_scanned</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@result_map</span>[<span class="ruby-identifier">port_result_code</span>] <span class="ruby-operator">&lt;&lt;</span>  <span class="ruby-identifier">port</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_port_complete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_port_complete-method -->
+
+    
+      <div id="method-i-on_port_start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_port_start</span><span
+            class="method-args">(port)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_port_start-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_port_start</span>(<span class="ruby-identifier">port</span>)
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:PORT_START</span>
+  <span class="ruby-ivar">@port</span> = <span class="ruby-identifier">port</span>
+  <span class="ruby-ivar">@port_start_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_port_start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_port_start-method -->
+
+    
+      <div id="method-i-on_port_tick" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_port_tick</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_port_tick-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_port_tick</span>
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:PORT_TICK</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_port_tick-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_port_tick-method -->
+
+    
+      <div id="method-i-on_scan_complete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_scan_complete</span><span
+            class="method-args">(status_code)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_scan_complete-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_scan_complete</span>(<span class="ruby-identifier">status_code</span>)
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_COMPLETE</span>
+  <span class="ruby-ivar">@status_code</span> = <span class="ruby-identifier">status_code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_scan_complete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_scan_complete-method -->
+
+    
+      <div id="method-i-on_scan_start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_scan_start</span><span
+            class="method-args">(guid,echo_server,port_delay)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>lifecycle methods</p>
+          
+          
+
+          
+          <div class="method-source-code" id="on_scan_start-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_scan_start</span>(<span class="ruby-identifier">guid</span>,<span class="ruby-identifier">echo_server</span>,<span class="ruby-identifier">port_delay</span>)
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_START</span>
+  <span class="ruby-ivar">@guid</span> = <span class="ruby-identifier">guid</span>
+  <span class="ruby-ivar">@echo_server</span> = <span class="ruby-identifier">echo_server</span>
+  <span class="ruby-ivar">@port_delay</span> = <span class="ruby-identifier">port_delay</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_scan_start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_scan_start-method -->
+
+    
+      <div id="method-i-on_scan_stop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_scan_stop</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_scan_stop-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_scan_stop</span>
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_STOPPED</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_scan_stop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_scan_stop-method -->
+
+    
+      <div id="method-i-on_start_failure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_start_failure</span><span
+            class="method-args">(status_code)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_start_failure-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_start_failure</span>(<span class="ruby-identifier">status_code</span>)
+  <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:START_FAILURE</span>
+  <span class="ruby-ivar">@status_code</span> = <span class="ruby-identifier">status_code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_start_failure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_start_failure-method -->
+
+    
+      <div id="method-i-open_ports" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">open_ports</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>return a <a href="Portspec.html">Portspec</a> of the open ports for this
+scan</p>
+          
+          
+
+          
+          <div class="method-source-code" id="open_ports-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">open_ports</span>
+  <span class="ruby-constant">Portspec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@result_map</span>[<span class="ruby-identifier">$success</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- open_ports-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- open_ports-method -->
+
+    
+      <div id="method-i-percent_complete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">percent_complete</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="percent_complete-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">percent_complete</span>
+  ((<span class="ruby-ivar">@ports_scanned</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@portspec</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_f</span>) <span class="ruby-operator">*</span> <span class="ruby-value">100</span>).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- percent_complete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- percent_complete-method -->
+
+    
+      <div id="method-i-port_delay_seconds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">port_delay_seconds</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="port_delay_seconds-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">port_delay_seconds</span>
+  <span class="ruby-ivar">@port_delay</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">1000</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- port_delay_seconds-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- port_delay_seconds-method -->
+
+    
+      <div id="method-i-port_duration" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">port_duration</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>data methods</p>
+          
+          
+
+          
+          <div class="method-source-code" id="port_duration-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">port_duration</span>
+  (((<span class="ruby-ivar">@port_end_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@port_start_time</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>)<span class="ruby-operator">+</span><span class="ruby-value">0.5</span>).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- port_duration-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- port_duration-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;#{@current_state.to_s} port #{@port} results #{@result_map}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
