@@ -17,7 +17,7 @@
 require 'optparse'
 require 'ostruct'
 require 'date'
-require 'pp'
+
 require_relative 'scan'
 require_relative 'tools'
 
@@ -33,28 +33,28 @@ module Firebind
     def initialize(arguments)
       @arguments = arguments
 
-      @opts = NIL
+      @opts = nil
       # Set defaults
       @options = OpenStruct.new
-      @options.username = NIL
-      @options.password = NIL
+      @options.username = nil
+      @options.password = nil
       @options.command_server = 'scanme.firebind.com'
       @options.protocol = :Simple
       @options.transport = :TCP
       @options.timeout = 5000
-      @options.tcp_port_list = NIL
-      @options.udp_port_list = NIL
-      @options.local_address = NIL
-      @options.tag = NIL
+      @options.tcp_port_list = nil
+      @options.udp_port_list = nil
+      @options.local_address = nil
+      @options.tag = nil
     end
 
     # Parse options, check arguments, then process the command
     def run
-      scan = NIL
+      scan = nil
       begin
 
         if parsed_options? && arguments_valid?
-          puts ''
+          puts
           verbose "Start at #{DateTime.now}"
           puts "Firescan Ruby client version #{VERSION} ( http://www.firebind.com )"
           #############
@@ -98,7 +98,7 @@ module Firebind
                             @options.password)
 
             scan.add_observer self
-            puts ''
+            puts
             begin
               @udp_scan = scan.scan
 
@@ -300,7 +300,7 @@ module Firebind
 
     # True if required arguments were provided
     def arguments_valid?
-      true if @options.udp_port_list != NIL || @options.tcp_port_list != NIL
+      true if @options.udp_port_list != nil || @options.tcp_port_list != nil
     end
 
   end
