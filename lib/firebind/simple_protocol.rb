@@ -27,7 +27,7 @@ module Firebind
     include Tools
 
     # @param [Object] transport
-    def initialize(guid,echo_host,transport,timeout,state=NIL)
+    def initialize(guid,echo_host,transport,timeout,state=nil)
       @guid = guid
       @echo_host = echo_host
       @state = state

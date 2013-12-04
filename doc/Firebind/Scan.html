@@ -195,7 +195,7 @@ scan() method</p>
         
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(command_server, ports, transport, timeout=5000, protocol=:SimpleProtocol, username=NIL, password=NIL)</span>
+            class="method-args">(command_server, ports, transport, timeout=5000, protocol=:SimpleProtocol, username=nil, password=nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -211,7 +211,7 @@ scan() method</p>
           
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/firebind/scan.rb, line 43</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> (<span class="ruby-identifier">command_server</span>, <span class="ruby-identifier">ports</span>, <span class="ruby-identifier">transport</span>, <span class="ruby-identifier">timeout</span>=<span class="ruby-value">5000</span>, <span class="ruby-identifier">protocol</span>=<span class="ruby-value">:SimpleProtocol</span>, <span class="ruby-identifier">username</span>=<span class="ruby-constant">NIL</span>, <span class="ruby-identifier">password</span>=<span class="ruby-constant">NIL</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> (<span class="ruby-identifier">command_server</span>, <span class="ruby-identifier">ports</span>, <span class="ruby-identifier">transport</span>, <span class="ruby-identifier">timeout</span>=<span class="ruby-value">5000</span>, <span class="ruby-identifier">protocol</span>=<span class="ruby-value">:SimpleProtocol</span>, <span class="ruby-identifier">username</span>=<span class="ruby-constant">nil</span>, <span class="ruby-identifier">password</span>=<span class="ruby-constant">nil</span>)
   <span class="ruby-ivar">@command_server</span> = <span class="ruby-identifier">command_server</span>
   <span class="ruby-ivar">@portspec</span> = <span class="ruby-constant">Firebind</span><span class="ruby-operator">::</span><span class="ruby-constant">Portspec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ports</span>)
   <span class="ruby-ivar">@timeout</span> = <span class="ruby-identifier">timeout</span>

@@ -43,13 +43,13 @@ module Firebind
       @transport = transport
       @portspec = portspec
       @timeout = timeout
-      @guid = NIL
-      @echo_server = NIL
+      @guid = nil
+      @echo_server = nil
       @port = 0
       @last_duration = 0
       @ports_scanned = 0
       @result_map = Hash.new {|hash,key| hash[key]=[]}  # block form
-      @message = NIL
+      @message = nil
     end
 
     def to_s
