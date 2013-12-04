@@ -40,7 +40,7 @@ module Firebind
     #--
     # @param [Object] command_server
     # @param [Object] ports
-    def initialize (command_server, ports, transport, timeout=5000, protocol=:SimpleProtocol, username=NIL, password=NIL)
+    def initialize (command_server, ports, transport, timeout=5000, protocol=:SimpleProtocol, username=nil, password=nil)
       @command_server = command_server
       @portspec = Firebind::Portspec.new(ports)
       @timeout = timeout

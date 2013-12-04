@@ -51,9 +51,9 @@ module Firebind
         readables,writables,errors = IO.select([@socket], [@socket], [@socket], @timeout_seconds)
         debug "readables=#{readables} writables=#{writables} errors=#{errors}"
 
-        readable = readables != NIL && readables.length > 0
-        writable = writables != NIL && writables.length > 0
-        error = errors != NIL && errors.length > 0
+        readable = readables != nil && readables.length > 0
+        writable = writables != nil && writables.length > 0
+        error = errors != nil && errors.length > 0
 
         if error
           raise Firebind::ScanError.new(:HANDSHAKE_CONNECTION_REFUSED)
