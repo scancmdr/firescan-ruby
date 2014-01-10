@@ -279,7 +279,7 @@ module Firebind
                  clientReportData: data }
 
       if $debug
-        debug("Scan update composed:")
+        debug('Scan update composed:')
         jj report
       end
 

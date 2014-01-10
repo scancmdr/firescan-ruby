@@ -50,7 +50,7 @@ module Firebind
       @port = 0
       @last_duration = 0
       @ports_scanned = 0
-      @result_map = {}
+      @result_map = Hash.new {|hash,key| hash[key]=[]}  # block form
       @message = nil
     end
 
