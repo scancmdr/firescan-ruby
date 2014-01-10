@@ -188,7 +188,7 @@ module Firebind
       request = Net::HTTP::Post.new(uri.request_uri)
       request.basic_auth(@username, @password)
 
-      transport_proto = if @transport == :UDP then 'udp' else 'tcp' end
+      transport_proto = if @transport == :UDP then 'UDP' else 'TCP' end
 
       data = {portSpec:@portspec.to_s,transport:transport_proto,scanTimeout:@timeout,tag:@tag}
       request.body = data.to_json
