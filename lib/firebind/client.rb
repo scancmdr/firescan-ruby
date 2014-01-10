@@ -214,7 +214,7 @@ module Firebind
             when $authentication_failure
               puts 'Authentication failure'
             when $request_invalid
-              puts 'Incompatible command server (request invalid)'
+              puts 'Incompatible command server (request invalid) please check for a firescan gem update'
             when $server_bind_error
               puts "Server unable to bind on ports #{state.portspec.to_s}"
             when $command_server_unavailable
