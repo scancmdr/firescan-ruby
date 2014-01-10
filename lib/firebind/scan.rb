@@ -1,3 +1,4 @@
+#--
 # Firebind -- Path Scan Client Software
 # Copyright (C) 2013 Firebind Inc. All rights reserved.
 # Authors - Jay Houghton
@@ -13,6 +14,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations under
 # the License.
+#++
 
 require 'net/http'
 require 'uri'
@@ -35,12 +37,14 @@ module Firebind
     include Observable
     include Tools
 
+    attr_accessor :tag
+
     # Create a new Scan
     #
     #--
     # @param [Object] command_server
     # @param [Object] ports
-    def initialize (command_server, ports, transport, timeout=5000, protocol=:SimpleProtocol, username=nil, password=nil)
+    def initialize (command_server, ports, transport, timeout=5000, protocol=:SimpleProtocol, username=nil, password=nil, tag=nil)
       @command_server = command_server
       @portspec = Firebind::Portspec.new(ports)
       @timeout = timeout
@@ -48,6 +52,7 @@ module Firebind
       @username = username
       @password = password
       @transport = transport
+      @tag = tag
       @done = false
       @state = ScanState.new(command_server,protocol,transport,@portspec,timeout)
 
@@ -136,13 +141,14 @@ module Firebind
 
       end
 
+      @state.on_scan_complete($client_scan_completed)
+
       api_update
 
-      if @portspec.size == @state.ports_scanned
-        @state.on_scan_complete($client_scan_completed)
-        changed
-        notify_observers(@state)
-      end
+      #if @portspec.size == @state.ports_scanned
+      changed
+      notify_observers(@state)
+
 
       #update
       @state
@@ -184,11 +190,11 @@ module Firebind
 
       transport_proto = if @transport == :UDP then 'udp' else 'tcp' end
 
-      data = {portSpec:@portspec.to_s,protocol:transport_proto}
+      data = {portSpec:@portspec.to_s,transport:transport_proto,scanTimeout:@timeout,tag:@tag}
       request.body = data.to_json
 
       #noinspection RubyStringKeysInHashInspection
-      #request.set_form_data({'portSpec' => @portspec.to_s, 'protocol' => 'TCP'})
+      #request.set_form_data({'portSpec' => @portspec.to_s, 'transport' => 'TCP'})
 
       begin
         response = http.request(request)
@@ -265,12 +271,18 @@ module Firebind
         data << { guid:@state.guid, serverId:@state.echo_server, portSpec:ps.to_s, statusCode:code, status:status}
       end
 
+      debug(@state.to_s)
       test_status = if @state.current_state == :SCAN_COMPLETE then 'Success' else 'Failed' end
 
       #build json payload with results
       report = { clientReport: { guid:@state.guid, serverId:@state.echo_server, testStatus:test_status, uid:@username},
                  clientReportData: data }
-      #jj report
+
+      if $debug
+        debug("Scan update composed:")
+        jj report
+      end
+
       json = report.to_json
       request.body = json
 

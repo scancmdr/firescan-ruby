@@ -1,3 +1,4 @@
+#--
 # Firebind -- Path Scan Client Software
 # Copyright (C) 2013 Firebind Inc. All rights reserved.
 # Authors - Jay Houghton
@@ -13,6 +14,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations under
 # the License.
+#++
 
 module Firebind
   class ScanError < IOError
