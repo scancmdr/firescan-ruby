@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.summary = 'Perform network path scanning'
   s.description = File.read(File.join(File.dirname(__FILE__), 'README.txt'))
   s.requirements = 'none'
-  s.version = '0.07'
+  s.version = '0.08'
   s.author = 'Jay Houghton'
   s.email = 'jay@firebind.com'
   s.homepage = 'http://www.firebind.com'

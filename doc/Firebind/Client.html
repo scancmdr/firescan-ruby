@@ -120,8 +120,6 @@
   
     <li class="file"><a href="../VERSION_txt.html">VERSION</a>
   
-    <li class="file"><a href="../build.html">build</a>
-  
     <li class="file"><a href="../doc/created_rid.html">created.rid</a>
   
     <li class="file"><a href="../firescan_gemspec.html">firescan.gemspec</a>
@@ -248,23 +246,23 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 35</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">arguments</span>)
   <span class="ruby-ivar">@arguments</span> = <span class="ruby-identifier">arguments</span>
 
-  <span class="ruby-ivar">@opts</span> = <span class="ruby-constant">nil</span>
+  <span class="ruby-ivar">@opts</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-comment"># Set defaults</span>
   <span class="ruby-ivar">@options</span> = <span class="ruby-constant">OpenStruct</span>.<span class="ruby-identifier">new</span>
-  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span> = <span class="ruby-constant">nil</span>
-  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span> = <span class="ruby-constant">nil</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">command_server</span> = <span class="ruby-string">'scanme.firebind.com'</span>
   <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">protocol</span> = <span class="ruby-value">:Simple</span>
   <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">transport</span> = <span class="ruby-value">:TCP</span>
   <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">timeout</span> = <span class="ruby-value">5000</span>
-  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span> = <span class="ruby-constant">nil</span>
-  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span> = <span class="ruby-constant">nil</span>
-  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">local_address</span> = <span class="ruby-constant">nil</span>
-  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tag</span> = <span class="ruby-constant">nil</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">local_address</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tag</span> = <span class="ruby-keyword">nil</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- new-source -->
           
@@ -301,7 +299,7 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="do_output-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 156</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 160</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">do_output</span>
 
   <span class="ruby-identifier">tcp</span> = <span class="ruby-ivar">@tcp_scan</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@tcp_scan</span>.<span class="ruby-identifier">current_state</span> <span class="ruby-operator">==</span> <span class="ruby-value">:SCAN_COMPLETE</span>
@@ -361,7 +359,7 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="do_scan_output-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 125</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">do_scan_output</span>(<span class="ruby-identifier">state</span>)
   <span class="ruby-identifier">open_ports</span> = <span class="ruby-identifier">state</span>.<span class="ruby-identifier">open_ports</span>
   <span class="ruby-identifier">closed_ports</span> = <span class="ruby-identifier">state</span>.<span class="ruby-identifier">closed_ports</span>
@@ -419,13 +417,13 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="run-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 52</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
-  <span class="ruby-identifier">scan</span> = <span class="ruby-constant">nil</span>
+  <span class="ruby-identifier">scan</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-keyword">begin</span>
 
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">parsed_options?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arguments_valid?</span>
-      <span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+      <span class="ruby-identifier">puts</span>
       <span class="ruby-identifier">verbose</span> <span class="ruby-node">&quot;Start at #{DateTime.now}&quot;</span>
       <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Firescan Ruby client version #{VERSION} ( http://www.firebind.com )&quot;</span>
       <span class="ruby-comment">#############</span>
@@ -441,7 +439,8 @@ href="../Firebind.html">Firebind</a> server</p>
                         <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">timeout</span>,
                         <span class="ruby-value">:SimpleProtocol</span>,
                         <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span>,
-                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span>)
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tag</span>)
 
         <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">add_observer</span> <span class="ruby-keyword">self</span>
         <span class="ruby-keyword">begin</span>
@@ -466,10 +465,11 @@ href="../Firebind.html">Firebind</a> server</p>
                         <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">timeout</span>,
                         <span class="ruby-value">:SimpleProtocol</span>,
                         <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">username</span>,
-                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span>)
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">password</span>,
+                        <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tag</span>)
 
         <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">add_observer</span> <span class="ruby-keyword">self</span>
-        <span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+        <span class="ruby-identifier">puts</span>
         <span class="ruby-keyword">begin</span>
           <span class="ruby-ivar">@udp_scan</span> = <span class="ruby-identifier">scan</span>.<span class="ruby-identifier">scan</span>
 
@@ -519,7 +519,7 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 189</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 193</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">state</span>)
   <span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;callback #{state.to_s}&quot;</span>
 
@@ -594,9 +594,9 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="arguments_valid-3F-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 302</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 306</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">arguments_valid?</span>
-  <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">nil</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">nil</span>
+  <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">udp_port_list</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">tcp_port_list</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- arguments_valid-3F-source -->
           
@@ -627,7 +627,7 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="output_options-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 294</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 298</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">output_options</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Options:\           &quot;</span>
   <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">marshal_dump</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
@@ -663,7 +663,7 @@ href="../Firebind.html">Firebind</a> server</p>
 
           
           <div class="method-source-code" id="parsed_options-3F-source">
-            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 232</span>
+            <pre><span class="ruby-comment"># File lib/firebind/client.rb, line 236</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">parsed_options?</span>
 
   <span class="ruby-ivar">@opts</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>

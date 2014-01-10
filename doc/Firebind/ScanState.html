@@ -136,8 +136,6 @@
   
     <li class="file"><a href="../VERSION_txt.html">VERSION</a>
   
-    <li class="file"><a href="../build.html">build</a>
-  
     <li class="file"><a href="../doc/created_rid.html">created.rid</a>
   
     <li class="file"><a href="../firescan_gemspec.html">firescan.gemspec</a>
@@ -454,7 +452,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 39</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 41</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">command_server</span>,<span class="ruby-identifier">protocol</span>,<span class="ruby-identifier">transport</span>,<span class="ruby-identifier">portspec</span>,<span class="ruby-identifier">timeout</span>)
   <span class="ruby-ivar">@command_server</span> = <span class="ruby-identifier">command_server</span>
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_SETUP</span>
@@ -462,13 +460,13 @@
   <span class="ruby-ivar">@transport</span> = <span class="ruby-identifier">transport</span>
   <span class="ruby-ivar">@portspec</span> = <span class="ruby-identifier">portspec</span>
   <span class="ruby-ivar">@timeout</span> = <span class="ruby-identifier">timeout</span>
-  <span class="ruby-ivar">@guid</span> = <span class="ruby-constant">nil</span>
-  <span class="ruby-ivar">@echo_server</span> = <span class="ruby-constant">nil</span>
+  <span class="ruby-ivar">@guid</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@echo_server</span> = <span class="ruby-keyword">nil</span>
   <span class="ruby-ivar">@port</span> = <span class="ruby-value">0</span>
   <span class="ruby-ivar">@last_duration</span> = <span class="ruby-value">0</span>
   <span class="ruby-ivar">@ports_scanned</span> = <span class="ruby-value">0</span>
   <span class="ruby-ivar">@result_map</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>]=[]}  <span class="ruby-comment"># block form</span>
-  <span class="ruby-ivar">@message</span> = <span class="ruby-constant">nil</span>
+  <span class="ruby-ivar">@message</span> = <span class="ruby-keyword">nil</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- new-source -->
           
@@ -506,7 +504,7 @@ scan</p>
 
           
           <div class="method-source-code" id="closed_ports-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 121</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 123</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">closed_ports</span>
   <span class="ruby-identifier">closed</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@result_map</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span>,<span class="ruby-identifier">ports</span><span class="ruby-operator">|</span>
@@ -543,7 +541,7 @@ scan</p>
 
           
           <div class="method-source-code" id="description-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 133</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 135</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">description</span>(<span class="ruby-identifier">port_result_code</span>)
   <span class="ruby-identifier">$result_code_messages</span>[<span class="ruby-identifier">port_result_code</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -576,7 +574,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_error-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 101</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_error</span>(<span class="ruby-identifier">status_code</span>)
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:ERROR</span>
   <span class="ruby-ivar">@status_code</span> = <span class="ruby-identifier">status_code</span>
@@ -610,7 +608,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_port_complete-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 83</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_port_complete</span>(<span class="ruby-identifier">port</span>,<span class="ruby-identifier">port_result_code</span>)
   <span class="ruby-ivar">@port_end_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:PORT_COMPLETE</span>
@@ -648,7 +646,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_port_start-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 72</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_port_start</span>(<span class="ruby-identifier">port</span>)
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:PORT_START</span>
   <span class="ruby-ivar">@port</span> = <span class="ruby-identifier">port</span>
@@ -683,7 +681,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_port_tick-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 78</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 80</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_port_tick</span>
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:PORT_TICK</span>
 <span class="ruby-keyword">end</span></pre>
@@ -716,7 +714,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_scan_complete-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 92</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 94</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_scan_complete</span>(<span class="ruby-identifier">status_code</span>)
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_COMPLETE</span>
   <span class="ruby-ivar">@status_code</span> = <span class="ruby-identifier">status_code</span>
@@ -750,7 +748,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_scan_start-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 60</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 62</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_scan_start</span>(<span class="ruby-identifier">guid</span>,<span class="ruby-identifier">echo_server</span>,<span class="ruby-identifier">port_delay</span>)
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_START</span>
   <span class="ruby-ivar">@guid</span> = <span class="ruby-identifier">guid</span>
@@ -786,7 +784,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_scan_stop-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 97</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_scan_stop</span>
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:SCAN_STOPPED</span>
 <span class="ruby-keyword">end</span></pre>
@@ -819,7 +817,7 @@ scan</p>
 
           
           <div class="method-source-code" id="on_start_failure-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 67</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_start_failure</span>(<span class="ruby-identifier">status_code</span>)
   <span class="ruby-ivar">@current_state</span> = <span class="ruby-value">:START_FAILURE</span>
   <span class="ruby-ivar">@status_code</span> = <span class="ruby-identifier">status_code</span>
@@ -854,7 +852,7 @@ scan</p>
 
           
           <div class="method-source-code" id="open_ports-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 116</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 118</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_ports</span>
   <span class="ruby-constant">Portspec</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@result_map</span>[<span class="ruby-identifier">$success</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -887,7 +885,7 @@ scan</p>
 
           
           <div class="method-source-code" id="percent_complete-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 111</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 113</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">percent_complete</span>
   ((<span class="ruby-ivar">@ports_scanned</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@portspec</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_f</span>) <span class="ruby-operator">*</span> <span class="ruby-value">100</span>).<span class="ruby-identifier">to_i</span>
 <span class="ruby-keyword">end</span></pre>
@@ -920,7 +918,7 @@ scan</p>
 
           
           <div class="method-source-code" id="port_delay_seconds-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 129</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">port_delay_seconds</span>
   <span class="ruby-ivar">@port_delay</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">1000</span>
 <span class="ruby-keyword">end</span></pre>
@@ -953,7 +951,7 @@ scan</p>
 
           
           <div class="method-source-code" id="port_duration-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">port_duration</span>
   (((<span class="ruby-ivar">@port_end_time</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@port_start_time</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1000</span>)<span class="ruby-operator">+</span><span class="ruby-value">0.5</span>).<span class="ruby-identifier">to_i</span>
 <span class="ruby-keyword">end</span></pre>
@@ -986,7 +984,7 @@ scan</p>
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 55</span>
+            <pre><span class="ruby-comment"># File lib/firebind/scan_state.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
   <span class="ruby-node">&quot;#{@current_state.to_s} port #{@port} results #{@result_map}&quot;</span>
 <span class="ruby-keyword">end</span></pre>

@@ -28,7 +28,7 @@ module Firebind
   # Firescan command line Ruby client for path scanning to a Firebind server
   class Client
     include Tools
-    VERSION = '0.07'
+    VERSION = '0.08'
 
     attr_reader :options
 
